@@ -1,6 +1,8 @@
 import { faArrowAltCircleDown, faArrowDown, faDownload, faFileExcel, faSortDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import React, { Fragment } from 'react'
+import '../../random.csv'
+import ProductTable from './ProductTable'
 
 const orderList = [
     {
@@ -30,6 +32,16 @@ const orderList = [
 ]
 
 const GeneratePO: React.FC = () => {
+
+    const [clicked, setClicked] = React.useState<number | boolean>(false)
+
+    const toggle = (index: number) => {
+        if(clicked == index){
+            return setClicked(false)
+        }
+        setClicked(index)
+    }
+
     return(
         <section className="py-4 space-y-2">
             <div className="flex items-center space-x-16 border-b-2 ">
@@ -40,13 +52,14 @@ const GeneratePO: React.FC = () => {
                 {
                     orderList.map((order, index) => {
                         return(
+                        <Fragment>
                             <div 
                                 key={index} 
                                 className="flex w-full space-x-12 bg-gray-200 text-gray-600 px-4 py-3"
                             >
                                 <div className="w-1/4 flex items-center justify-between pr-8">
                                     <p>{order.name}</p>
-                                    <FontAwesomeIcon icon={faSortDown}/>
+                                    <FontAwesomeIcon icon={faSortDown} onClick={() => toggle(index)}/>
                                 </div>
                                 <div className="">
                                     <p className="text-sm">{order.by}</p>
@@ -55,9 +68,17 @@ const GeneratePO: React.FC = () => {
                                 <div className="flex items-center space-x-4 w-1/4 justify-between">
                                     <FontAwesomeIcon icon={faFileExcel} className="text-green-700"/>
                                     <p>{order.file}</p>
-                                    <FontAwesomeIcon icon={faDownload}/>
+                                    <a href="../../random.csv" download="../../random.csv">
+                                        <FontAwesomeIcon icon={faDownload}/>
+                                    </a>
                                 </div>
                             </div>
+                            {
+                                clicked == index ? (
+                                    <ProductTable isOpen={true}/>
+                                ) : (<></>)
+                            }
+                        </Fragment>
                         )
                     })
                 }
