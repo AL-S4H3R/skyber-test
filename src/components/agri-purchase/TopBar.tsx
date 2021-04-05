@@ -1,5 +1,6 @@
 import React from 'react'
 import { TabGroup } from '@statikly/funk'
+import ExecutingTab from './Executing'
 
 const TopBar: React.FC = () => {
     return(
@@ -56,7 +57,7 @@ const TopBar: React.FC = () => {
                     activeClassName="opacity-100 duration-500 translate-x-0"
                     inactiveClassName="absolute opacity-0 -translate-x-2"
                 >
-                    <h1>Executing</h1>
+                    <ExecutingTab />
                 </TabGroup.TabPanel>
                 <TabGroup.TabPanel
                     index={2}
@@ -64,7 +65,7 @@ const TopBar: React.FC = () => {
                     activeClassName="opacity-100 duration-500 translate-x-0"
                     inactiveClassName="absolute opacity-0 -translate-x-2"
                 >
-                    {/* Executed Tab */}
+                    <h1>Executed</h1>
                 </TabGroup.TabPanel>
                 <TabGroup.TabPanel
                     index={3}
