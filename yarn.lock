@@ -10078,6 +10078,11 @@ react-scripts@4.0.3:
   optionalDependencies:
     fsevents "^2.1.3"
 
+react-tailwind-table@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-tailwind-table/-/react-tailwind-table-1.0.1.tgz#38dc62c78f7fa62be0695e3feaf88a9f8ad44d73"
+  integrity sha512-BLWag35mD8D2VcgPYXLFxf7FZOYN54blK7aTs5el+1aR1sYYG90HlE2zrREFv/ld6wPvw6XdfKuB1Tys7jfS4w==
+
 react-uid@^2.3.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/react-uid/-/react-uid-2.3.1.tgz#22a75d4a948a4824b9b8078cbf864d55d91ca4be"

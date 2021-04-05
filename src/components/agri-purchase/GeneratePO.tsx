@@ -43,7 +43,7 @@ const GeneratePO: React.FC = () => {
     }
 
     return(
-        <section className="py-4 space-y-2">
+        <section className="py-4 space-y-2 h-full">
             <div className="flex items-center space-x-16 border-b-2 ">
                 <p>Executing Agri-Input Orders</p>
                 <p>Batched By</p>
