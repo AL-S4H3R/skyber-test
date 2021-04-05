@@ -12,7 +12,7 @@ const Sidenav: React.FC = () => {
             {
                 navtabs.map(cat => {
                     return(
-                        <div className=" hover:text-green-300 text-sm">
+                        <div className=" hover:text-green-500 text-sm">
                             <a href="">{cat}</a>
                         </div>
                     )
